@@ -1,0 +1,1243 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    padding-top: 12.5vh; /* Added padding to account for fixed navbar */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: rgb(85, 85, 85);
+}
+
+/* Transition Code */
+a, 
+.btn {
+    transition: all 300ms ease; 
+}
+
+a {
+    text-decoration: none;
+}
+  
+/* Nav Links */
+#desktop-nav, .nav-links {
+    display: flex;
+    color: black;
+}
+
+/* Desktop Navigation Bar */
+#desktop-nav {
+    justify-content: space-between;
+    align-items: center;
+    height: 12.5vh;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem; /* Simplified padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Critical: ensure padding is included in width */
+    z-index: 1000;
+    background-color: white;
+}
+
+/* Adjust the logo styling */
+#desktop-nav .logo {
+    padding-left: 50px; /* Reduced from 100px to create more space */
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.logo:hover {
+    cursor: pointer;
+    color: rgb(85, 181, 181);
+}
+
+/* Better spacing for nav links */
+.nav-links {
+    gap: 1.5rem;
+    list-style: none;
+    font-size: 1.5rem;
+    color: black;
+    margin-right: 2rem; /* Increased from 1rem for more space on right */
+    padding-right: 20px; /* Additional padding to ensure links aren't cut off */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Ensure each nav link has proper display properties */
+.nav-links li {
+    display: inline-block; /* Better than block for horizontal navbar */
+}
+
+.nav-links li a {
+    white-space: nowrap;
+    display: inline-block; /* Changed from block */
+    padding: 0.5rem 0.5rem; /* Add some padding around each link */
+}
+
+a:hover {
+    color: rgb(85, 181, 181);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(85, 181, 181);
+}
+
+/* Hamburger Menu Styling */
+#hamburger-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: 2px solid rgb(85, 181, 181);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0 1.5rem;
+    height: 12vh;
+    justify-content: space-between; /* Ensure space between logo and hamburger */
+    align-items: center;
+}
+
+/* Position the hamburger menu icon to the right */
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: auto; /* This pushes it to the right */
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger icon animation */
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px); 
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px); 
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+.hamburger-icon span:nth-child(2) {
+    opacity: 1;
+}
+
+.hamburger-icon span:last-child {
+    transform: none;
+}
+
+/* Dropdown menu styling */
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: 200px; /* Fixed width for better appearance */
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1001; /* One higher than the navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 5px 5px;
+}
+
+.menu-links.open {
+    max-height: 300px;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links a:hover {
+    color: rgb(85, 181, 181);
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+/* Sections */
+section {
+    padding-top: 4vh;
+    height: auto;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+/* Profile Section */
+#profile {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+    margin-top: 0; /* Adjusted for fixed navbar */
+}
+
+.section_pic-container, .section__pic-container {
+    display: flex;  
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+    border-radius: 50%; 
+    overflow: hidden;
+}
+
+.section_text {
+    align-self: center;
+    text-align: center;
+}
+
+.section_text p {
+    font-weight: 600;
+}
+
+.section__text__p1 {
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.section__text__p2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/* Icons */
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 0.5rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-1 {
+    background-color: #1e3a8a;;
+    color: white;
+    border: 0.1rem solid #1e3a8a;;
+}
+
+.btn-color-1:hover {
+    background-color: lightblue;
+    color: black;
+    border-color: lightblue;
+}
+
+.btn-color-2 {
+    background-color: rgb(84, 184, 84);
+    color: white;
+    border: 0.1rem solid rgb(84, 184, 84);
+}
+
+.btn-color-2:hover {
+    background-color: lightgreen;
+    color: black;
+    border: 0.1rem solid lightgreen;
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+@keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+  
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+  
+/* Applying animations to elements */
+.section_pic-container {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+  
+.section_text_p1 {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+  
+.title {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+  
+.section__text__p2 {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.9s;
+    opacity: 0;
+}
+  
+.btn-container {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+}
+  
+#socials-container {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+  
+/* Add hover animation for profile picture */
+.section_pic-container:hover {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+  
+/* Button hover effects with animations */
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section Styling with Reduced Spacing */
+#about {
+    background-color: #1e3a8a; /* Deep blue background */
+    color: white;
+    padding: 0; /* Remove padding to have more control */
+    margin: 0; /* Remove default section margin */
+    width: 100%; /* Make sure it spans full width */
+    box-sizing: border-box;
+    min-height: 100vh; /* Full viewport height */
+    position: relative; /* Allow absolute positioning of children */
+    display: block; /* Change from flex to block for positioning control */
+}
+
+/* Style for the main title with reduced spacing */
+.about-title {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 2rem; /* Reduced from 3rem */
+    margin-bottom: 1rem; /* Reduced from 2rem */
+    position: relative;
+    padding-bottom: 1rem;
+    color: white;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: rgb(85, 181, 181);
+}
+
+/* Repositioned about picture */
+.about-pic-container {
+    width: 600px; /* Much larger */
+    height: 760px;
+    position: absolute; /* Position independently */
+    left: 10%; /* Position more to the left */
+    top: 15%; /* Reduced from 25% to be closer to title */
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(50px); /* Removed rotation for straight image */
+    transition: all 0.5s ease;
+    animation: slideUp 1s ease-out forwards;
+    z-index: 1; /* Ensure it's above other elements */
+    min-width: auto; /* Override previous conflicting styles */
+    max-width: none; /* Override previous conflicting styles */
+    flex: none; /* Override previous conflicting styles */
+}
+
+.about-pic-container:hover {
+    transform: scale(1.05); /* Removed rotation, just scale on hover */
+}
+
+.about-pic-container img {
+    width: 100%; /* Changed from 150% to 100% for proper scaling */
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Repositioned about content with reduced spacing */
+.about-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.about-content {
+    display: block; /* Change to block layout */
+    padding-top: 0; /* Reduced spacing */
+    gap: 0; /* Override previous styles */
+    justify-content: normal; /* Override previous styles */
+    align-items: normal; /* Override previous styles */
+    flex-wrap: nowrap; /* Override previous styles */
+}
+
+.about-text-container {
+    width: 45%;
+    margin-left: 50%; /* Position to the right side */
+    padding-top: 2rem; /* Reduced from 6rem to bring content closer to title */
+    animation: slideUp 1.2s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    min-width: auto; /* Override previous styles */
+}
+
+.about-text-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem; /* Slightly reduced */
+    color: rgb(85, 181, 181);
+}
+
+.about-text-container p {
+    color: #e5e7eb;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem; /* Reduced from 2rem */
+}
+
+/* Tab System */
+.about-details-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.about-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.65rem;
+    color: white;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    border-bottom: 2px solid rgb(85, 181, 181);
+    color: rgb(85, 181, 181);
+}
+
+.tab-content {
+    position: relative;
+    min-height: 250px;
+    width: 100%;
+}
+
+/* Updated tab data styling for proper display/hide functionality */
+.tab-data {
+    display: none;
+    opacity: 0;
+    animation: none;
+    transition: opacity 0.3s ease;
+}
+
+.tab-data.active {
+    display: block !important; /* Force display with !important */
+    opacity: 1 !important; /* Force opacity with !important */
+    animation: tabFade 0.5s forwards;
+}
+
+/* Animation for the tabs */
+@keyframes tabFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Education & Certification Styles */
+.education-item, .certification-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid rgb(85, 181, 181);
+}
+
+.education-item h3, .certification-item h3 {
+    font-size: 1.5rem; /* Increased from 1.2rem */
+    margin-bottom: 0.7rem; /* Increased margin for better spacing */
+    color: rgb(85, 181, 181);
+}
+
+.education-item p, .certification-item p {
+    font-size: 1.1rem; /* Slightly larger paragraph text */
+    margin: 0.3rem 0; /* More space between lines */
+    color: #e5e7eb;
+}
+
+/* Club items styling */
+.club-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid rgb(85, 181, 181);
+}
+
+.club-item h3 {
+    font-size: 1.5rem; /* Increased from 1.2rem */
+    margin-bottom: 0.7rem;
+    color: rgb(85, 181, 181);
+}
+
+.club-item p {
+    font-size: 1.1rem; /* Slightly larger paragraph text */
+    margin: 0.3rem 0; /* More space between lines */
+    color: #e5e7eb;
+}
+
+/* Make sure education and club items are visible */
+#education.tab-data.active .education-item,
+#clubs.tab-data.active .club-item {
+    display: block;
+    opacity: 1;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(85, 181, 181, 0.2);
+}
+
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+/* Horizontal Skills/Technologies Tabs */
+
+/* Container for the tabs */
+.skills-tabs-container {
+    display: flex;
+    flex-direction: row; /* Change to row to display horizontally */
+    gap: 20px; /* Add gap between the tabs */
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 800px; /* Limit maximum width as needed */
+}
+
+/* Tab button styling */
+.skills-tab {
+    padding: 15px 30px;
+    border: 1px solid #ddd;
+    border-radius: 30px; /* Rounded corners like in the image */
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1; /* Make tabs take equal width */
+    text-align: center;
+}
+
+/* Tab text styling */
+.skills-tab span {
+    color: black; /* Change text color to black as requested */
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Active tab styling (if needed) */
+.skills-tab.active {
+    border-color: #007bff; /* Change this to your preferred active tab border color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab content styling */
+.skills-tab-content {
+    display: none; /* Hide all content by default */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.skills-tab-content.active {
+    display: block; /* Show active content */
+}
+
+/* Ensure skills container properly centers everything */
+.skills-container {
+    display: flex;
+    flex-direction: row; /* Explicitly set to row to make containers side by side */
+    justify-content: center;
+    gap: 4rem; /* Increased gap between cards for better spacing */
+    margin: 2rem auto;
+    max-width: 1200px;
+    align-items: flex-start; /* Align tops of containers */
+}
+
+/* Each skill card takes up appropriate space */
+.skills-card {
+    flex: 1 1 500px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    padding: 2.5rem; /* Increased padding inside cards */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 500px; /* Slightly reduced max-width */
+    min-height: 600px; /* Set minimum height to ensure both cards are the same height */
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-card-title {
+    font-size: 1.8rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 3rem; /* Increased bottom margin for title */
+    font-weight: 500;
+}
+
+/* Updated Skills List with more spacing between items */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Increased spacing between skill items */
+    align-items: center; /* Center items horizontally */
+    margin-top: 1rem; /* Added top margin */
+    flex-grow: 1; /* Allow the list to grow and fill the card */
+}
+
+/* Skill item styling */
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Increased gap between logo and text */
+    width: 90%;
+    max-width: 300px;
+    justify-content: flex-start;
+    position: relative; /* For potential hover effects */
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(5px); /* Slight movement on hover */
+}
+
+/* Logo styling */
+.skill-logo {
+    width: 50px; /* Increased size from 40px */
+    height: 50px; /* Increased size from 40px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px; /* Slightly larger radius */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+    background-color: #f9f9f9; /* Light background for logos */
+    padding: 5px; /* Added padding inside logo container */
+}
+
+.skill-logo img {
+    width: 85%; /* Slightly reduced to prevent overflow */
+    height: 85%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.skill-item:hover .skill-logo img {
+    transform: scale(1.1); /* Grow logo slightly on hover */
+}
+
+/* Skill info styling */
+.skill-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-name {
+    font-weight: 600;
+    font-size: 1.2rem; /* Increased from 1.1rem */
+    color: #333;
+}
+
+.skill-level {
+    font-size: 0.95rem; /* Increased from 0.9rem */
+    color: #777;
+}
+
+/* Projects Section Styling - Matching About Section */
+#projects {
+    background-color: #1e3a8a; /* Same deep blue as about section */
+    color: white;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    display: block;
+}
+
+/* Project title styling similar to about title */
+.projects-title {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1rem;
+    color: white;
+}
+
+.projects-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: rgb(85, 181, 181);
+}
+
+/* Container for all project content */
+.projects-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Project grid for card layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    padding: 3rem 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Project card styling */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: calc(0.2s * var(--i, 1));
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adding hover effect to project cards */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgba(85, 181, 181, 0.2);
+}
+
+/* Project image container */
+.project-img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.05);
+}
+
+/* Project content styling */
+.project-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: rgb(85, 181, 181);
+}
+
+.project-description {
+    color: #e5e7eb;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Project technologies tags */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background-color: rgba(85, 181, 181, 0.3);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background-color: rgb(85, 181, 181);
+}
+
+/* Project links/buttons */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.project-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: rgb(85, 181, 181);
+    color: white;
+    border-radius: 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.project-btn:hover {
+    background-color: transparent;
+    border-color: rgb(85, 181, 181);
+    text-decoration: none;
+    text-underline-offset: unset;
+    text-decoration-color: unset;
+    transform: translateY(-3px);
+}
+
+/* Ensure each card in the first row appears with a slight delay */
+.project-card:nth-child(1) { --i: 1; }
+.project-card:nth-child(2) { --i: 2; }
+.project-card:nth-child(3) { --i: 3; }
+.project-card:nth-child(4) { --i: 4; }
+
+/* Contact Section Styling */
+#contact {
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1 1 400px;
+}
+
+.contact-info h2, .contact-form h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: rgb(85, 181, 181);
+}
+
+.contact-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    padding: 0.8rem 2rem;
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #167d7d;
+    color:white;
+    transform: translateY(-3px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #152a62;
+    transform: translateY(-3px);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #0f172a;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: rgb(85, 181, 181);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        padding: 3rem 5%;
+    }
+    
+    .skills-container {
+        gap: 3rem; /* Reduced gap on smaller screens */
+    }
+    
+    .skills-card {
+        padding: 2rem;
+        min-height: auto; /* Remove fixed height on smaller screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .skills-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .skills-card {
+        max-width: 90%;
+        width: 100%;
+        min-height: auto;
+        margin-bottom: 2rem;
+    }
+    
+    .skills-list {
+        gap: 2.5rem; /* Slightly reduce gap on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        margin: 0 2rem; /* Reduced side margins for mobile */
+    }
+    
+    /* Switch to hamburger menu */
+    #desktop-nav {
+        display: none !important; /* Force hide desktop nav */
+    }
+    
+    #hamburger-nav {
+        display: flex !important; /* Force show hamburger nav */
+    }
+    
+    body {
+        padding-top: 12vh; /* Adjust body padding for mobile nav height */
+    }
+    
+    /* About section responsive adjustments */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-pic-container {
+        width: 90%;
+        max-width: 350px;
+        position: relative;
+        left: 0;
+        margin: 1rem auto;
+        height: auto;
+    }
+    
+    .about-text-container {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skill-item {
+        width: 100%;
+    }
+    
+    /* Projects grid to single column */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 2rem 5%;
+    }
+    
+    .project-card {
+        max-width: none;
+    }
+    
+    .project-title {
+        font-size: 1.6rem;
+    }
+    
+    /* Contact section adjustments */
+    .contact-container {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-links {
+        width: 100%;
+        right: 0; /* Align with edge of screen */
+    }
+    
+    #hamburger-nav {
+        padding: 0 1rem; /* Reduced padding */
+    }
+    
+    .skill-logo {
+        width: 40px; /* Reduced size on smallest screens */
+        height: 40px;
+    }
+    
+    .skill-name {
+        font-size: 1.1rem;
+    }
+    
+    .skill-level {
+        font-size: 0.85rem;
+    }
+    
+    .project-content {
+        padding: 1.2rem;
+    }
+    
+    .project-tech {
+        margin-bottom: 1.2rem;
+    }
+    
+    .project-img {
+        height: 180px;
+    }
+    
+    /* Adjust contact section for smallest screens */
+    .contact-form, .contact-info {
+        padding: 1rem;
+    }
+    
+    .social-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}

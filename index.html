@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yisak's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+<body>
+  <!-- Desktop Nav -->
+  <nav id="desktop-nav">
+    <div class="logo">Yisak Tolla</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills/Technologies</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hamburger Nav -->
+  <nav id="hamburger-nav">
+    <div class="logo">Yisak Tolla</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills/Tech</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Section -->
+  <section id="profile">
+    <div class="section_pic-container">
+      <img src="./assets/profile_pic.png" alt="Profile picture" />
+    </div>
+
+    <div class="section_text">
+      <p class="section_text_p1">Hello, I'm</p> 
+      <h1 class="title">Yisak Tolla</h1>
+      <p class="section__text__p2">Aspiring Software Engineer</p>
+
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./assets/Yisak Tolla - Resume.pdf')">Download Resume</button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+      </div>
+
+      <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="window.open('https://www.linkedin.com/in/yisaktolla', '_blank')" />
+        <img src="./assets/github.png" alt="My GitHub profile" class="icon" onclick="window.open('https://github.com/YisakTolla', '_blank')" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section with Repositioned Image -->
+  <section id="about">
+    <h1 class="about-title">About Me</h1>
+    
+    <div class="about-container">
+      <!-- Image now directly inside the about section, not nested in about-content -->
+      <div class="about-pic-container">
+        <img src="./assets/about-pic.png" alt="Professional headshot" />
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text-container">
+          <h2>Get to Know Me</h2>
+          <p>Hello! I'm Yisak Tolla, an aspiring software engineer with a passion for creating solutions to complex problems. I am currently a junior in George Mason University 
+            with a major in Applied Computer Science. I am working as a Undergraduate Teaching Assistant and I am seeking for a intern/full-time position.</p>
+          
+          <div class="about-details-container">
+            <div class="about-tabs">
+              <button class="tab-btn active" onclick="openTab('education')">Education</button>
+              <button class="tab-btn" onclick="openTab('clubs')">Clubs/Organizations</button>
+            </div>
+            
+            <div class="tab-content">
+              <div id="education" class="tab-data active">
+                <div class="education-item">
+                  <h3>Bachelor of Science in Computer Science</h3>
+                  <p>George Mason University, August 2022 - December 2025</p>
+                  <p>GPA: 3.8/4.0</p>
+                </div>
+                <div class="education-item">
+                  <h3>High School Diploma</h3>
+                  <p>Potomac Falls High School, 2018-2022</p>
+                  <p>Graduated with Honors</p>
+                </div>
+              </div>
+              
+              <div id="clubs" class="tab-data">
+                <div class="club-item">
+                  <h3>Senior Volunteer</h3>
+                  <p>Debre Haile Kidus Raguel Cathedral,<br>Ethiopian Orthodox Tewahedo Church, 2019</p>
+                </div>
+                <div class="club-item">
+                  <h3>Undergraduate Teaching Assistant</h3>
+                  <p>George Mason University, Jan 2024</p>
+                </div>
+                <div class="club-item">
+                  <h3>Member</h3>
+                  <p>The National Society of Leadership and Success (NSLS), Apr 2024</p>
+                </div>
+                <div class="club-item">
+                  <h3>Member</h3>
+                  <p>Academic Challenge<br> Potomac Falls High School 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section with Horizontal Layout -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h1 class="title">Skills & Technologies</h1>
+      
+      <div class="skills-container">
+        <!-- First Skills Card -->
+        <div class="skills-card">
+          <h2 class="skills-card-title">Skills</h2>
+          
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/java.png" alt="Java Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Java</span>
+                <span class="skill-level">Experienced</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/c.png" alt="C Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">C</span>
+                <span class="skill-level">Experienced</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/python.png" alt="Python Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-level">Experienced</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/javascript.png" alt="JavaScript Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/html.png" alt="HTML Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">HTML</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/css.png" alt="CSS Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">CSS</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/sql.png" alt="SQL Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">SQL</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/rust.png" alt="Rust Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Rust</span>
+                <span class="skill-level">Beginner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Second Skills Card -->
+        <div class="skills-card">
+          <h3 class="skills-card-title">Frameworks/Technologies</h3>
+          
+          <div class="skills-list">
+            <!-- Frameworks/Technologies with skill-logo -->
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/nodejs.png" alt="NodeJs Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">NodeJs</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/express.png" alt="Express.js Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Express.js</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/react.png" alt="Express.js Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">React</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/git.png" alt="Git Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Git</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/linux.png" alt="Linux Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Linux</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/mongodb.png" alt="MongoDB Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">MongoDb</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/numpy.png" alt="Numpy Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">Numpy</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-logo">
+                <img src="./assets/skills/scikit.png" alt="SciKit Logo">
+              </div>
+              <div class="skill-info">
+                <span class="skill-name">SciKit</span>
+                <span class="skill-level">Basic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section with Blue Background -->
+  <section id="projects" class="section">
+    <div class="projects-container">
+      <h1 class="projects-title">Projects</h1>
+      
+      <div class="projects-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./assets/projects/project1.png" alt="Heart Disease Predictor AI thumbnail">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Heart Disease Predictor AI</h3>
+            <p class="project-description">A machine learning model that predicts the likelihood of heart disease based on patient data. Uses advanced algorithms to analyze health metrics and provide risk assessments with high accuracy.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">scikit-learn</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/YisakTolla/heart-disease-predictor" class="project-btn" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./assets/projects/project2.png" alt="Rust Snake Game thumbnail">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Rust Snake Game</h3>
+            <p class="project-description">A classic Snake game built with Rust programming language. Features smooth controls, increasing difficulty, and a minimalist design. Demonstrates efficient memory management and performance optimization.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Rust</span>
+              <span class="tech-tag">Piston</span>
+              <span class="tech-tag">OpenGL</span>
+              <span class="tech-tag">Game Development</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/YisakTolla/rust-snake-game" class="project-btn" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./assets/projects/project3.png" alt="Portfolio Website thumbnail">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-description">A responsive personal portfolio website built with HTML, CSS, and JavaScript. Features smooth animations, mobile responsiveness, and dynamic content loading to showcase my projects and skills effectively.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/YisakTolla/portfolio" class="project-btn" target="_blank">GitHub</a>
+              <a href="#" class="project-btn" target="_blank">Live Site</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./assets/projects/project4.png" alt="Task Management App thumbnail">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Thread Process Manager</h3>
+            <p class="project-description">A queue-based system for managing CPU threads, designed to efficiently process incoming requests based on their priority levels and current system resource load.</p>
+            <div class="project-tech">
+              <span class="tech-tag">C</span>
+              <span class="tech-tag">Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Placeholder) -->
+  <section id="contact" class="section">
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>Feel free to reach out if you'd like to work together or have any questions!</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="contact-icon">📧</i>
+            <span>ytolla@gmu.edu</span>
+          </div>
+          <div class="contact-item">
+            <i class="contact-icon">📍</i>
+            <span>Fairfax, Virginia</span>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/in/yisaktolla" target="_blank" class="social-btn">LinkedIn</a>
+          <a href="https://github.com/YisakTolla" target="_blank" class="social-btn">GitHub</a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h2>Send a Message</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Yisak Tolla. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#profile">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
