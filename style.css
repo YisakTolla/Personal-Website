@@ -389,7 +389,7 @@ section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* About Section Styling with Reduced Spacing */
+/* About Section Styling - UPDATED FOR MOBILE RESPONSIVENESS */
 #about {
     background-color: #1e3a8a; /* Deep blue background */
     color: white;
@@ -424,66 +424,62 @@ section {
     background-color: rgb(85, 181, 181);
 }
 
-/* Repositioned about picture */
+/* Modify the about container to use flex layout */
+.about-container {
+    max-width: 100%;
+    width: 100%;
+    animation: fadeIn 1s ease-out forwards;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+/* Modify the pic container positioning for better responsiveness */
 .about-pic-container {
-    width: 600px; /* Much larger */
-    height: 760px;
-    position: absolute; /* Position independently */
-    left: 10%; /* Position more to the left */
-    top: 15%; /* Reduced from 25% to be closer to title */
+    width: 40%;
+    max-width: 600px;
+    height: auto;
+    position: relative; /* Change from absolute to relative */
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    transform: translateY(50px); /* Removed rotation for straight image */
     transition: all 0.5s ease;
     animation: slideUp 1s ease-out forwards;
-    z-index: 1; /* Ensure it's above other elements */
-    min-width: auto; /* Override previous conflicting styles */
-    max-width: none; /* Override previous conflicting styles */
-    flex: none; /* Override previous conflicting styles */
+    z-index: 1;
+    margin-top: 3rem;
 }
 
 .about-pic-container:hover {
-    transform: scale(1.05); /* Removed rotation, just scale on hover */
+    transform: scale(1.05);
 }
 
 .about-pic-container img {
-    width: 100%; /* Changed from 150% to 100% for proper scaling */
+    width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
 }
 
-/* Repositioned about content with reduced spacing */
-.about-container {
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
-    animation: fadeIn 1s ease-out forwards;
-}
-
+/* Adjust content positioning */
 .about-content {
-    display: block; /* Change to block layout */
-    padding-top: 0; /* Reduced spacing */
-    gap: 0; /* Override previous styles */
-    justify-content: normal; /* Override previous styles */
-    align-items: normal; /* Override previous styles */
-    flex-wrap: nowrap; /* Override previous styles */
+    width: 50%;
+    display: block;
+    padding-top: 3rem;
 }
 
 .about-text-container {
-    width: 45%;
-    margin-left: 50%; /* Position to the right side */
-    padding-top: 2rem; /* Reduced from 6rem to bring content closer to title */
+    width: 100%;
+    margin-left: 0; /* Reset from previous 50% */
+    padding-top: 0;
     animation: slideUp 1.2s ease-out forwards;
     animation-delay: 0.2s;
     opacity: 0;
-    min-width: auto; /* Override previous styles */
 }
 
 .about-text-container h2 {
     font-size: 2.2rem;
-    margin-bottom: 1.2rem; /* Slightly reduced */
+    margin-bottom: 1.2rem;
     color: rgb(85, 181, 181);
 }
 
@@ -491,7 +487,7 @@ section {
     color: #e5e7eb;
     font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem; /* Reduced from 2rem */
+    margin-bottom: 1.5rem;
 }
 
 /* Tab System */
@@ -1130,6 +1126,25 @@ footer {
     }
 }
 
+@media (max-width: 992px) {
+    /* About section mobile adjustments */
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-pic-container {
+        width: 60%;
+        max-width: 500px;
+        margin-bottom: 2rem;
+    }
+    
+    .about-content {
+        width: 90%;
+        max-width: 700px;
+    }
+}
+
 @media (max-width: 768px) {
     section {
         margin: 0 2rem; /* Reduced side margins for mobile */
@@ -1149,23 +1164,23 @@ footer {
     }
     
     /* About section responsive adjustments */
-    .about-content {
-        flex-direction: column;
-    }
-    
     .about-pic-container {
-        width: 90%;
-        max-width: 350px;
-        position: relative;
-        left: 0;
-        margin: 1rem auto;
-        height: auto;
+        width: 80%;
+        max-width: 400px;
     }
     
-    .about-text-container {
-        width: 90%;
-        margin: 0 auto;
+    .about-content {
+        width: 100%;
         padding-top: 1rem;
+    }
+    
+    .about-text-container h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .about-tabs {
+        justify-content: center;
     }
     
     .skills-grid {
@@ -1196,7 +1211,28 @@ footer {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-pic-container {
+        width: 90%;
+    }
+    
+    .about-text-container h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-text-container p {
+        font-size: 1.1rem;
+    }
+    
+    .tab-btn {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+    
     .menu-links {
         width: 100%;
         right: 0; /* Align with edge of screen */
